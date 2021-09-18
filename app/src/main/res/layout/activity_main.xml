@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+    android:layout_margin="4dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="16dp"
+        android:text="Please enter DO Value in mg/L in range 2.6 - 4.8"
+        android:gravity="center"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:layout_margin="8dp"
+        android:gravity="center"
+        android:hint="e.g. 3.3"
+        android:textAlignment="center"
+        android:id="@+id/input_DO"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/btn_calculate"
+        android:text="Calculate"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" MPAI "
+            android:background="@drawable/bg_rounded"
+            android:textColor="@color/black"
+            android:padding="8dp"
+            android:layout_margin="4dp"
+            android:textSize="20dp"
+            android:gravity="left"/>
+
+        <Button
+            android:id="@+id/editMPAI"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/darker_gray"
+            android:padding="4dp"
+            android:onClick="editMPAI"
+            android:visibility="visible"
+            android:textSize="10dp"
+            android:background="@android:color/transparent"
+            android:drawableLeft="@drawable/ic_baseline_edit_24"
+            android:text="Edit MPAI Equation"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="4dp"
+            android:id="@+id/llEditMPAI"
+            android:layout_gravity="center_horizontal"
+            android:visibility="gone">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:padding="4dp"
+                android:text="m"
+                android:textSize="20dp" />
+            <EditText
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/mpai_m"
+                android:minWidth="80dp"
+                android:inputType="numberDecimal|numberSigned"
+                android:textSize="16dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:padding="4dp"
+                android:text="c"
+                android:textSize="20dp" />
+            <EditText
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/mpai_c"
+                android:minWidth="80dp"
+                android:inputType="numberDecimal|numberSigned"
+                android:textSize="16dp"/>
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_baseline_save_24"
+                android:layout_gravity="center"
+                android:layout_marginLeft="8dp"
+                android:onClick="saveMPAI"
+                android:background="@android:color/transparent"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="-"
+        android:layout_margin="16dp"
+        android:textStyle="bold"
+        android:id="@+id/output_MPAI"
+        android:textSize="22dp"
+        android:gravity="center"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="  BOD  "
+        android:layout_margin="4dp"
+        android:background="@drawable/bg_rounded"
+        android:textColor="@color/black"
+        android:padding="8dp"
+        android:textSize="20dp"
+        android:gravity="left"/>
+            <Button
+            android:id="@+id/editBOD"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="10dp"
+            android:padding="4dp"
+            android:onClick="editBOD"
+            android:background="@android:color/transparent"
+            android:drawableLeft="@drawable/ic_baseline_edit_24"
+            android:text="Edit BOD Equation"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="4dp"
+            android:id="@+id/llEditBOD"
+            android:layout_gravity="center_horizontal"
+            android:visibility="gone">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:padding="4dp"
+                android:text="m"
+                android:textSize="20dp" />
+            <EditText
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/bod_m"
+                android:minWidth="80dp"
+                android:inputType="numberDecimal|numberSigned"
+                android:textSize="16dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:padding="4dp"
+                android:text="c"
+                android:textSize="20dp" />
+            <EditText
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/bod_c"
+                android:minWidth="80dp"
+                android:inputType="numberDecimal|numberSigned"
+                android:textSize="16dp"/>
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_baseline_save_24"
+                android:layout_gravity="center"
+                android:layout_marginLeft="8dp"
+                android:onClick="saveBOD"
+                android:background="@android:color/transparent"/>
+        </LinearLayout>
+
+    </LinearLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="-"
+        android:layout_margin="16dp"
+        android:id="@+id/output_BOD"
+        android:textStyle="bold"
+        android:textSize="22dp"
+        android:gravity="center"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="  COD  "
+        android:background="@drawable/bg_rounded"
+        android:textColor="@color/black"
+        android:padding="8dp"
+        android:layout_margin="4dp"
+        android:textSize="20dp"
+        android:gravity="left"/>
+                <Button
+            android:id="@+id/editCOD"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/darker_gray"
+            android:padding="4dp"
+            android:onClick="editCOD"
+            android:textSize="10dp"
+            android:background="@android:color/transparent"
+            android:drawableLeft="@drawable/ic_baseline_edit_24"
+            android:text="Edit COD Equation"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="4dp"
+            android:id="@+id/llEditCOD"
+            android:layout_gravity="center_horizontal"
+            android:visibility="gone">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:padding="4dp"
+                android:text="m"
+                android:textSize="20dp" />
+            <EditText
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/cod_m"
+                android:minWidth="80dp"
+                android:inputType="numberDecimal|numberSigned"
+                android:textSize="16dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:padding="4dp"
+                android:text="c"
+                android:textSize="20dp" />
+            <EditText
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/cod_c"
+                android:minWidth="80dp"
+                android:inputType="numberDecimal|numberSigned"
+                android:textSize="16dp"/>
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_baseline_save_24"
+                android:layout_gravity="center"
+                android:layout_marginLeft="8dp"
+                android:onClick="saveCOD"
+                android:background="@android:color/transparent"/>
+        </LinearLayout>
+    </LinearLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="-"
+        android:layout_margin="16dp"
+        android:id="@+id/output_COD"
+        android:textSize="22dp"
+        android:textStyle="bold"
+        android:gravity="center"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_margin="8dp"
+        android:background="@color/black"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Developed by Amruta Chobe \nas part of M.TECH. Project "
+        android:layout_margin="0dp"
+        android:textSize="16dp"
+        android:gravity="center"
+        android:layout_gravity="bottom"/>
+
+</androidx.appcompat.widget.LinearLayoutCompat>
